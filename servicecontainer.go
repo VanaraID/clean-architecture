@@ -1,9 +1,8 @@
 package main
 
 import (
-	"sync"
-
 	"database/sql"
+	"sync"
 
 	"github.com/VanaraID/clean-architecture/controllers"
 	"github.com/VanaraID/clean-architecture/infrastructures"
@@ -19,11 +18,11 @@ type kernel struct{}
 
 func (k *kernel) InjectTodoController() controllers.TodoController {
 
-	sqlConn, _ := sql.Open("sqlite3", "/var/tmp/todos.db")
-	sqliteHandler := &infrastructures.SQLiteHandler{}
-	sqliteHandler.Conn = sqlConn
+	sqlConn, _ := sql.Open("mysql", "root:root@/vanara")
+	MySQLHandler := &infrastructures.MySQLHandler{}
+	MySQLHandler.Conn = sqlConn
 
-	todoRepository := &repositories.TodoRepository{sqliteHandler}
+	todoRepository := &repositories.TodoRepository{MySQLHandler}
 	todoService := &services.TodoService{todoRepository}
 	todoController := controllers.TodoController{todoService}
 
