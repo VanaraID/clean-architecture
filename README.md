@@ -1,7 +1,9 @@
 # clean-architecture
 
 > sqlite3 /var/tmp/todos.db < todos.sql
+
 > go build
+
 > ./clean-architecture
 
 
