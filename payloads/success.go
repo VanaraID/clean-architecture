@@ -1,6 +1,13 @@
 package payloads
 
-type Success struct {
+import "github.com/VanaraID/clean-architecture/models"
+
+type SuccessGetTodo struct {
 	Code     int
-	Response interface{}
+	Response models.Todo
+}
+
+type SuccessGetAllTodo struct {
+	Code     int
+	Response []models.Todo
 }

@@ -22,7 +22,7 @@ func (controller *TodoController) GetTodo(res http.ResponseWriter, req *http.Req
 		//Handle error
 	}
 
-	json.NewEncoder(res).Encode(payloads.Success{Code: http.StatusOK, Response: todo})
+	json.NewEncoder(res).Encode(payloads.SuccessGetTodo{Code: http.StatusOK, Response: todo})
 }
 
 func (controller *TodoController) GetAllTodo(res http.ResponseWriter, req *http.Request) {
@@ -32,5 +32,5 @@ func (controller *TodoController) GetAllTodo(res http.ResponseWriter, req *http.
 		//Handle error
 	}
 
-	json.NewEncoder(res).Encode(payloads.Success{Code: http.StatusOK, Response: todos})
+	json.NewEncoder(res).Encode(payloads.SuccessGetAllTodo{Code: http.StatusOK, Response: todos})
 }
