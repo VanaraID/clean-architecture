@@ -5,6 +5,7 @@ import (
 	"fmt"
 
 	"github.com/VanaraID/clean-architecture/interfaces"
+	_ "github.com/jinzhu/gorm/dialects/sqlite"
 )
 
 type SQLiteHandler struct {

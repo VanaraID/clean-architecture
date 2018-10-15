@@ -5,8 +5,6 @@ import (
 	"github.com/VanaraID/clean-architecture/models"
 
 	"fmt"
-
-	_ "github.com/jinzhu/gorm/dialects/sqlite"
 )
 
 type TodoRepository struct {
